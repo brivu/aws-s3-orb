@@ -1,9 +1,5 @@
 description: >
   Syncs directories and S3 prefixes. https://docs.aws.amazon.com/cli/latest/reference/s3/sync.html
-commands:
-  oidc-auth:
-    steps:
-      - run: echo "Hello world"
 parameters:
   from:
     type: string
