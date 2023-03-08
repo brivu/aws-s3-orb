@@ -89,7 +89,8 @@ parameters:
 docker:
   - image: cimg/base:current
 steps:
-  - steps: <<parameters.authStep>>
+  - steps: 
+      authStep: <<parameters.authStep>>
 
 
 # commands:
