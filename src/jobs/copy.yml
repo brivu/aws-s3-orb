@@ -80,12 +80,7 @@ parameters:
       #     aws-region: << parameters.aws-region >>
       #     profile-name: << parameters.profile-name >>
     default:
-      - oidc-auth:
-          role-arn: arn:aws:iam::276617782805:role/bri-vu-s3-test
-          profile-name: "OIDC-User"
-          session-duration: <<parameters.session-duration>>
-          aws-region: <<parameters.aws-region>>
-          role-session-name: <<parameters.role-session-name>>
+      - oidc-auth
 docker:
   - image: cimg/base:current
 steps:
