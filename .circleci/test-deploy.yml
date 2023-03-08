@@ -45,7 +45,7 @@ workflows:
       # Make sure to include "filters: *filters" in every test job you want to run as part of your deployment.
       - integration-test:
           name: integration-test-<<matrix.executor>>
-          context: [BRIVU-OIDC]
+          context: BRIVU-OIDC
           filters: *filters
           matrix:
             parameters:
