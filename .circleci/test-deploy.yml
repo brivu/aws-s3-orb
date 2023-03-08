@@ -36,7 +36,7 @@ jobs:
           profile-name: "OIDC-User"
       - aws-s3/copy:
           from: bucket/build_asset.txt
-          to: "s3://orb-testing-1"
+          to: "s3://orb-testing-2"
           profile-name: "OIDC-User"
           install-aws-cli: false
 workflows:
