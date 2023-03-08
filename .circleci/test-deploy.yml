@@ -31,8 +31,8 @@ jobs:
       - run: mkdir bucket && echo "lorem ipsum" > bucket/build_asset.txt
       - aws-s3/sync:
           from: bucket
-          to: "s3://orb-testing-1/s3-orb"
-          role-arn: arn:aws:iam::122211685980:role/CPE_S3_OIDC_TEST
+          to: "s3://orb-testing-2/s3-orb"
+          role-arn: arn:aws:iam::276617782805:role/brivu-s3-orb-test
           profile-name: "OIDC-User"
       - aws-s3/copy:
           from: bucket/build_asset.txt
