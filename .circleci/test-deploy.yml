@@ -68,7 +68,7 @@ workflows:
           matrix:
             parameters:
               executor: [ "alpine", "docker-base", "windows", "macos" ]
-      - aws-s3/copy
+      - copy
       - orb-tools/pack:
           filters: *filters
       - orb-tools/publish:
