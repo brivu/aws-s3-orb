@@ -77,7 +77,6 @@ steps:
                   aws-secret-access-key: << parameters.aws-secret-access-key >>
                   aws-region: << parameters.aws-region >>
                   profile-name: << parameters.profile-name >>
-  - oidc-auth
   - deploy:
       name: S3 Sync
       when: <<parameters.when>>
