@@ -71,6 +71,7 @@ workflows:
       - aws-s3/copy:
           role-arn: arn:aws:iam::276617782805:role/bri-vu-s3-test
           profile-name: "OIDC-User"
+          context: BRIVU-OIDC
       - orb-tools/pack:
           filters: *filters
       - orb-tools/publish:
