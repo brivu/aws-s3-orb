@@ -10,7 +10,7 @@ parameters:
   authStep:
     type: steps
     default:
-      - aws-s3/copy
+      - copy
 docker:
   - image: cimg/base:current
 steps:
