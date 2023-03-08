@@ -20,8 +20,6 @@ steps:
 #   oidc-auth:
 #     steps:
 #      - run: echo
-    
-
 # parameters:
 #   from:
 #     type: string
