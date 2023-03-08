@@ -47,8 +47,8 @@ parameters:
     type: boolean
     default: true
   auth-method:
-    description: | 
-      The authentication method used to access your AWS account. Authenticate using temporary keys with OIDC 
+    description: |
+      The authentication method used to access your AWS account. Authenticate using temporary keys with OIDC
       or with your static AWS keys. This parameter defaults to OIDC because it's much more secure.
       For more information, please visit https://circleci.com/blog/openid-connect-identity-tokens
     type: enum
