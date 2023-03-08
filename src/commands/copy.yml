@@ -91,11 +91,11 @@ steps:
   #           condition: <<parameters.role-arn>>
   #           steps:
   #             - aws-cli/setup:
-                  role-arn: <<parameters.role-arn>>
-                  profile-name: <<parameters.profile-name>>
-                  session-duration: <<parameters.session-duration>>
-                  aws-region: <<parameters.aws-region>>
-                  role-session-name: <<parameters.role-session-name>>
+                  # role-arn: <<parameters.role-arn>>
+                  # profile-name: <<parameters.profile-name>>
+                  # session-duration: <<parameters.session-duration>>
+                  # aws-region: <<parameters.aws-region>>
+                  # role-session-name: <<parameters.role-session-name>>
   #       - unless:
   #           condition: <<parameters.role-arn>>
   #           steps:
