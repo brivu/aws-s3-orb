@@ -56,7 +56,7 @@ workflows:
           orb-name: brivu/aws-s3-orb
           vcs-type: << pipeline.project.type >>
           pub-type: production
-          context: orb-publisher
+          context: orb-publishing
           requires:
             - orb-tools/pack
             - integration-test-alpine
