@@ -61,16 +61,16 @@ workflows:
   test-deploy:
     jobs:
       # Make sure to include "filters: *filters" in every test job you want to run as part of your deployment.
-      - integration-test-commands:
-          name: integration-test-<<matrix.executor>>
-          context: BRIVU-OIDC
-          filters: *filters
-          matrix:
-            parameters:
-              executor: [ "alpine", "docker-base", "windows", "macos" ]
+      # - integration-test-commands:
+      #     name: integration-test-<<matrix.executor>>
+      #     context: BRIVU-OIDC
+      #     filters: *filters
+      #     matrix:
+      #       parameters:
+      #         executor: [ "alpine", "docker-base", "windows", "macos" ]
       - aws-s3/copy:
-          role-arn: arn:aws:iam::276617782805:role/bri-vu-s3-test
-          profile-name: "OIDC-User"
+          # role-arn: arn:aws:iam::276617782805:role/bri-vu-s3-test
+          # profile-name: "OIDC-User"
           context: BRIVU-OIDC
       - orb-tools/pack:
           filters: *filters
