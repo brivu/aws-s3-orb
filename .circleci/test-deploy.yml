@@ -32,7 +32,7 @@ jobs:
       - aws-s3/sync:
           from: bucket
           to: "s3://orb-testing-2/s3-orb"
-          role-arn: arn:aws:iam::276617782805:role/brivu-s3-testing
+          role-arn: arn:aws:iam::276617782805:role/bri-vu-s3-test
           profile-name: "OIDC-User"
       - aws-s3/copy:
           from: bucket/build_asset.txt
