@@ -81,7 +81,7 @@ parameters:
       #     profile-name: << parameters.profile-name >>
     default:
       - oidc-auth:
-          ole-arn: <<parameters.role-arn>>
+          role-arn: <<parameters.role-arn>>
           profile-name: <<parameters.profile-name>>
           session-duration: <<parameters.session-duration>>
           aws-region: <<parameters.aws-region>>
