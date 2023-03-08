@@ -74,19 +74,19 @@ workflows:
           context: BRIVU-OIDC
       - orb-tools/pack:
           filters: *filters
-      - orb-tools/publish:
-          orb-name: brivu/aws-s3
-          vcs-type: << pipeline.project.type >>
-          pub-type: production
-          context: orb-publisher
-          requires:
-            - orb-tools/pack
-            - integration-test-alpine
-            - integration-test-docker-base
-            - integration-test-windows
-            - integration-test-macos
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
+      # - orb-tools/publish:
+      #     orb-name: brivu/aws-s3
+      #     vcs-type: << pipeline.project.type >>
+      #     pub-type: production
+      #     context: orb-publisher
+      #     requires:
+      #       - orb-tools/pack
+      #       - integration-test-alpine
+      #       - integration-test-docker-base
+      #       - integration-test-windows
+      #       - integration-test-macos
+      #     filters:
+      #       branches:
+      #         ignore: /.*/
+      #       tags:
+      #         only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
