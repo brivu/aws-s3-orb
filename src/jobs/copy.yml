@@ -10,11 +10,14 @@ parameters:
   authStep:
     type: steps
     default:
-      - copy
+      - copy:
+          from: bucket/build_asset.txt
+          to: "s3://orb-testing-2"
 docker:
   - image: cimg/base:current
 steps:
   - steps: <<parameters.authStep>>
+
 
 # commands:
 #   oidc-auth:
