@@ -6,12 +6,12 @@ description: >
 #     steps:
 #       - run: echo hello
 parameters:
-  from:
-    type: string
-    description: A local file or source s3 object
-  to:
-    type: string
-    description: A local target or s3 destination
+  # from:
+  #   type: string
+  #   description: A local file or source s3 object
+  # to:
+  #   type: string
+  #   description: A local target or s3 destination
   arguments:
     description: If you wish to pass any additional arguments to the aws copy command (i.e. -sse)
     default: ''
