@@ -12,6 +12,10 @@ parameters:
     description: If you wish to pass any additional arguments to the aws copy command (i.e. -sse)
     default: ''
     type: string
+  profile-name:
+    description: AWS profile name to be configured.
+    type: string
+    default: ''     
   when:
     description: |
       Add the when attribute to a job step to override its default behavior
