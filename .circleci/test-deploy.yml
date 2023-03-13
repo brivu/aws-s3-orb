@@ -57,6 +57,7 @@ workflows:
           from: bucket/build_asset.txt
           to: "s3://orb-testing-2"
           profile-name: "OIDC-User"
+          context: BRIVU-OIDC
           auth:
             - aws-cli/setup:
                 role-arn: arn:aws:iam::276617782805:role/bri-vu-s3-test
