@@ -15,7 +15,7 @@ parameters:
   profile-name:
     description: AWS profile name to be configured.
     type: string
-    default: ''     
+    default: ''
   when:
     description: |
       Add the when attribute to a job step to override its default behavior
