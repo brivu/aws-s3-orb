@@ -14,11 +14,11 @@ parameters:
   profile-name:
     description: AWS profile name to be configured.
     type: string
-    default: ''    
+    default: ''
   auth:
     description: |
       The authentication method used to access your AWS account. Provide the aws-cli/setup command to authenticate with your preferred method.
-      View examples for more information. 
+      View examples for more information.
     type: steps
   when:
     description: |
