@@ -61,6 +61,7 @@ workflows:
           auth:
             - aws-cli/setup:
                 role-arn: arn:aws:iam::276617782805:role/bri-vu-s3-test
+                role-session-name: "Test-session"
       - orb-tools/pack:
           filters: *filters
       # - orb-tools/publish:
