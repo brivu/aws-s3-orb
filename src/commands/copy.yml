@@ -25,9 +25,12 @@ parameters:
     default: "on_success"
 
 steps:
-  - copy:
+  - run:
+      name: S3 Copy << parameters.from >> -> << parameters.to >>
       when: <<parameters.when>>
-      from: <<parameters.from>>
-      to: <<parameters.to>>
-      arguments: <<parameters.arguments>>
-      profile-name: <<parameters.profile-name>>
+      environment:
+        PARAM_AWS_S3_FROM: <<parameters.from>>
+        PARAM_AWS_S3_TO: <<parameters.to>>
+        PARAM_AWS_S3_ARGUMENTS: <<parameters.arguments>>
+        PARAM_AWS_S3_PROFILE_NAME: <<parameters.profile-name>>
+      command: <<include(scripts/copy.sh)>>
