@@ -29,34 +29,18 @@ jobs:
     steps:
       - checkout
       - run: mkdir bucket && echo "lorem ipsum" > bucket/build_asset.txt
+      - aws-cli/setup:
+          role-arn: arn:aws:iam::276617782805:role/bri-vu-s3-test
+          profile-name: "OIDC-User"
       - aws-s3/sync:
           from: bucket
           to: "s3://orb-testing-2/s3-orb"
-          role-arn: arn:aws:iam::276617782805:role/bri-vu-s3-test
-          profile-name: "OIDC-User"
       - aws-s3/copy:
           from: bucket/build_asset.txt
           to: "s3://orb-testing-2"
           profile-name: "OIDC-User"
           install-aws-cli: false
-  integration-test-job:
-    parameters:
-      executor:
-        type: executor
-    executor: <<parameters.executor>>
-    steps:
-      - checkout
-      - run: mkdir bucket && echo "lorem ipsum" > bucket/build_asset.txt
-      - aws-s3/sync:
-          from: bucket
-          to: "s3://orb-testing-2/s3-orb"
-          role-arn: arn:aws:iam::276617782805:role/bri-vu-s3-test
-          profile-name: "OIDC-User"
-      - aws-s3/copy:
-          from: bucket/build_asset.txt
-          to: "s3://orb-testing-2"
-          profile-name: "OIDC-User"
-          install-aws-cli: false
+
 workflows:
   test-deploy:
     jobs:
@@ -69,9 +53,9 @@ workflows:
       #       parameters:
       #         executor: [ "alpine", "docker-base", "windows", "macos" ]
       - aws-s3/copy:
-          # role-arn: arn:aws:iam::276617782805:role/bri-vu-s3-test
-          # profile-name: "OIDC-User"
-          context: BRIVU-OIDC
+          auth:
+            - aws-cli/setup:
+                role-arn: arn:aws:iam::276617782805:role/bri-vu-s3-test
       - orb-tools/pack:
           filters: *filters
       # - orb-tools/publish:
