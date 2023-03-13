@@ -17,7 +17,7 @@ parameters:
     default: ''
   auth:
     description: |
-      The authentication method used to access your AWS account. Import the aws-cli orb in your config and 
+      The authentication method used to access your AWS account. Import the aws-cli orb in your config and
       provide the aws-cli/setup command to authenticate with your preferred method. View examples for more information.
     type: steps
   when:
