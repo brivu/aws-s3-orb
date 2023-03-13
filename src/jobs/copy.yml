@@ -29,6 +29,7 @@ parameters:
     default: "on_success"
 docker:
   - image: cimg/base:current
+name: Copy Job
 steps:
   - steps: <<parameters.auth>>
   - copy:
