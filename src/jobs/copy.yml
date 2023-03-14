@@ -30,9 +30,9 @@ parameters:
 docker:
   - image: cimg/base:current
 steps:
-  - name: Copy-Job
   - steps: <<parameters.auth>>
   - copy:
+      name: Copy
       when: <<parameters.when>>
       from: <<parameters.from>>
       to: <<parameters.to>>
