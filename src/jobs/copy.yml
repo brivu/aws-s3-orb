@@ -31,8 +31,8 @@ docker:
   - image: cimg/base:current
 steps:
   - steps: <<parameters.auth>>
+      name: AWS Authentication step.
   - copy:
-      name: Copy
       when: <<parameters.when>>
       from: <<parameters.from>>
       to: <<parameters.to>>
